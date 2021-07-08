@@ -1,0 +1,16 @@
+{
+  "companyName": "源代碼科技",
+  "landingPage": {
+    "banner": {
+      "detailText": "我們使用最新的技術，為您的企業定制雲端服務管理後台，並由一個後台，開拓多方客戶端服務。",
+      "startButtonText": "Get Started",
+      "titleText1": "Code Once",
+      "titleText2": "Use Anywhere"
+    }
+  },
+  "navigationTop": {
+    "aboutUsText": "About",
+    "serviceText": "Service",
+    "contactText": "Contact"
+  }
+}

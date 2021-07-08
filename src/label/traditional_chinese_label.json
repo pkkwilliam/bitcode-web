@@ -1,0 +1,53 @@
+{
+  "companyName": "源代碼科技",
+  "landingPage": {
+    "advantage": {
+      "advantages": [
+        {
+          "title": "領航企業服務31年",
+          "icon": "icon1.png",
+          "description": "用友始終堅持用戶之友的核心價值觀：傾聽客戶-設身處地；贏得信賴-長期合作；成就客戶-超越預期。"
+        },
+        {
+          "title": "15,000人專業團隊",
+          "icon": "icon2.png",
+          "description": "用友擁有一支充滿活力的團隊，包括具有國際視野和管理經驗的本地和海外人才。"
+        },
+        {
+          "title": "服務超過522萬家企業",
+          "icon": "icon3.png",
+          "description": "用友的客户覆蓋大中型企業和小微企業。60%的中國500強企業也在使用用友。"
+        }
+      ],
+      "title": "亞太區領先企業服務軟件提供商"
+    },
+    "banner": {
+      "detailText": "我們使用最新的技術，為您的企業定制雲端服務管理系統，並由一個後台，開拓多方客戶端服務。",
+      "title1": "Code Once",
+      "title2": "Use Anywhere"
+    },
+    "feature1": {
+      "feature": [
+        {
+          "title": "服務超過522萬家企業",
+          "icon": "icon7.png",
+          "description": "用友的客户覆蓋大中型企業和小微企業。60%的中國500強企業也在使用用友。"
+        }
+      ],
+      "title": "功能特色"
+    }
+  },
+  "navigation": {
+    "aboutUs": "關於我們",
+    "careers": "招聘",
+    "caseList": "客戶案例",
+    "companyInfo": "公司介紹",
+    "contact": "聯絡我們",
+    "freeConsulate": "免費諮詢",
+    "newAndEvent": "最新消息",
+    "product": "產品",
+    "service": "服務",
+    "solution": "解决方案",
+    "wechatMiniProgram": "微信小程序"
+  }
+}
