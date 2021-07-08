@@ -13,8 +13,9 @@ class CustomNavbar extends ApplicationComponent {
           <nav className={`navbar navbar-expand-lg menu_one ${mClass}`}>
             <div className={`container ${cClass}`}>
               <Link className={`navbar-brand ${slogo}`} to="/">
-                <img src={require("../img/logo2.png")} alt="" />
-                <img src={require("../img/logo.png")} alt="logo" />
+                {/* <img src={require("../img/logo2.png")} alt="" /> */}
+                {/* <img src={require("../img/logo.png")} alt="logo" /> */}
+                <h3>Bitcode</h3>
               </Link>
               <button
                 className="navbar-toggler collapsed"
@@ -55,7 +56,7 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.product}
                     </Link>
-                    <ul role="menu" className=" dropdown-menu">
+                    {/* <ul role="menu" className=" dropdown-menu">
                       <li className="nav-item">
                         <NavLink
                           exact
@@ -76,7 +77,7 @@ class CustomNavbar extends ApplicationComponent {
                           Service Details
                         </NavLink>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="dropdown submenu nav-item">
                     <Link
@@ -90,7 +91,7 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.solution}
                     </Link>
-                    <ul role="menu" className=" dropdown-menu">
+                    {/* <ul role="menu" className=" dropdown-menu">
                       <li className="nav-item">
                         <NavLink
                           exact
@@ -161,7 +162,7 @@ class CustomNavbar extends ApplicationComponent {
                           Sign Up
                         </NavLink>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="dropdown submenu nav-item">
                     <Link
@@ -175,7 +176,7 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.caseList}
                     </Link>
-                    <ul role="menu" className=" dropdown-menu">
+                    {/* <ul role="menu" className=" dropdown-menu">
                       <li className="nav-item">
                         <NavLink
                           title="Portfolio 2"
@@ -212,10 +213,10 @@ class CustomNavbar extends ApplicationComponent {
                           Portfolio Single
                         </NavLink>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                   <li className="nav-item">
-                    <NavLink title="Pricing" className="nav-link" to="/Contact">
+                    <NavLink title="Pricing" className="nav-link" to="./">
                       {navigation.careers}
                     </NavLink>
                   </li>
@@ -230,7 +231,7 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.aboutUs}
                     </a>
-                    <ul className="dropdown-menu">
+                    {/* <ul className="dropdown-menu">
                       <li className="nav-item">
                         <NavLink to="/Bloglist" className="nav-link">
                           {navigation.companyInfo}
@@ -241,7 +242,7 @@ class CustomNavbar extends ApplicationComponent {
                           {navigation.newAndEvent}
                         </NavLink>
                       </li>
-                    </ul>
+                    </ul> */}
                   </li>
                 </ul>
                 <a className={`btn_get btn_hover ${hbtnClass}`} href="#get-app">

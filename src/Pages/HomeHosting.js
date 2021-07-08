@@ -34,7 +34,7 @@ class HomeHosting extends ApplicationComponent {
         />
 
         <HostingActionTwo />
-        <FooterErp FooterData={FooterData} />
+        {/* <FooterErp FooterData={FooterData} /> */}
       </div>
     );
   }
