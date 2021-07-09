@@ -74,9 +74,9 @@ class FooterErp extends Component {
                     聯繫我們
                   </h3>
                   <ul className="list-unstyled f_list">
-                    <li>地址: 漁翁街188號永好工業大廈7樓F座</li>
+                    <li>地址: 澳門漁翁街188號永好工業大廈7樓F座</li>
                     <li>電話: +(853) 6353 0392</li>
-                    <li>郵箱: bitcode.mo@gmail.com</li>
+                    <li>郵箱: marketing@bitcode.mo</li>
                   </ul>
                 </div>
               </div>
