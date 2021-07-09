@@ -7,13 +7,18 @@ import HostingFeaturesTwo from "../components/Service/HostingFeaturesTwo";
 import HostingAction from "../components/HostingAction";
 import HostingActionTwo from "../components/HostingActionTwo";
 import FooterErp from "../components/Footer/FooterErp";
-import FooterData from "../components/Footer/FooterData";
 import ApplicationComponent from "../common/applicationComponent";
+import Seo from "../components/Seo";
+
+const title = "源代碼科技|Bitcode Technology";
+const metaDescription =
+  "澳門APP製作服務. 我們還為澳門中小企業製作網站APP！ 讓你得到全方位應用及推廣，擁有更多受眾！ 跨平台安卓app、蘋果app等. 一次開發多平台使用";
 
 class HomeHosting extends ApplicationComponent {
   render() {
     return (
       <div className="body_wrapper">
+        <Seo title={title} description={metaDescription} />
         <CustomNavbar
           mClass="menu_four hosting_menu"
           nClass="w_menu"
@@ -34,7 +39,7 @@ class HomeHosting extends ApplicationComponent {
         />
 
         <HostingActionTwo />
-        {/* <FooterErp FooterData={FooterData} /> */}
+        <FooterErp />
       </div>
     );
   }

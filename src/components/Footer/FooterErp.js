@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import Reveal from "react-reveal/Reveal";
 import { Link } from "react-router-dom";
+import FooterData from "./FooterData";
 
 class FooterErp extends Component {
   render() {
-    let FooterData = this.props.FooterData;
     let { fClass } = this.props;
     return (
       <footer className={`footer_area h_footer_dark ${fClass}`}>
