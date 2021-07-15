@@ -1,5 +1,18 @@
 {
   "companyName": "源代碼科技",
+  "footer": {
+    "copyRight": "© 2021 Bitcode Technology Ltd. All rights reserved.",
+    "product": {
+      "title": "產品",
+      "products": [
+        { "text": "ERP", "pageName": "/" },
+        { "text": "SCM", "pageName": "/" },
+        { "text": "澳提 | PickTB", "pageName": "PICK_TB" },
+        { "text": "Project Phoenix", "pageName": "/" },
+        { "text": "RMMS地產業務", "pageName": "/" }
+      ]
+    }
+  },
   "landingPage": {
     "advantage": {
       "advantages": [
@@ -37,6 +50,10 @@
       "title": "功能特色"
     }
   },
+  "pickTBPage": {
+    "description": "多功能淘寶代收平台",
+    "title": "澳提 | PickTB"
+  },
   "navigation": {
     "aboutUs": "關於我們",
     "careers": "招聘",
@@ -45,7 +62,10 @@
     "contact": "聯絡我們",
     "freeConsulate": "免費諮詢",
     "newAndEvent": "最新消息",
-    "product": "產品",
+    "product": {
+      "title": "產品",
+      "products": [{ "text": "澳提 | PickTB", "pageName": "PICK_TB" }]
+    },
     "service": "服務",
     "solution": "解决方案",
     "wechatMiniProgram": "微信小程序"

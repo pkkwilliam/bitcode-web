@@ -2,10 +2,12 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Sticky from "react-stickynode";
 import ApplicationComponent from "../common/applicationComponent";
+import { getPathByPageName, PICK_TB } from "../common/routes";
 
 class CustomNavbar extends ApplicationComponent {
   render() {
     const { navigation } = this.label;
+    const { product } = navigation;
     var { mClass, nClass, cClass, slogo, hbtnClass } = this.props;
     return (
       <Sticky top={0} innerZ={9999} activeClass="navbar_fixed">
@@ -54,30 +56,11 @@ class CustomNavbar extends ApplicationComponent {
                       aria-haspopup="true"
                       aria-expanded="false"
                     >
-                      {navigation.product}
+                      {product.title}
                     </Link>
-                    {/* <ul role="menu" className=" dropdown-menu">
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Service"
-                          className="nav-link"
-                          to="/Service"
-                        >
-                          Service
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Service Details"
-                          className="nav-link"
-                          to="/ServiceDetails"
-                        >
-                          Service Details
-                        </NavLink>
-                      </li>
-                    </ul> */}
+                    <ul role="menu" className=" dropdown-menu">
+                      <TabItems items={product.products} />
+                    </ul>
                   </li>
                   <li className="dropdown submenu nav-item">
                     <Link
@@ -91,78 +74,7 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.solution}
                     </Link>
-                    {/* <ul role="menu" className=" dropdown-menu">
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="About"
-                          className="nav-link"
-                          to="/About"
-                        >
-                          About
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Process"
-                          className="nav-link"
-                          to="/Process"
-                        >
-                          Process
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Team"
-                          className="nav-link"
-                          to="/Team"
-                        >
-                          Team
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Price"
-                          className="nav-link"
-                          to="/Price"
-                        >
-                          Price
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="Faq"
-                          className="nav-link"
-                          to="/Faq"
-                        >
-                          Faq
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="SignIn"
-                          className="nav-link"
-                          to="/SignIn"
-                        >
-                          Sign In
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          exact
-                          title="SignUp"
-                          className="nav-link"
-                          to="/SignUp"
-                        >
-                          Sign Up
-                        </NavLink>
-                      </li>
-                    </ul> */}
+                    <ul role="menu" className=" dropdown-menu"></ul>
                   </li>
                   <li className="dropdown submenu nav-item">
                     <Link
@@ -176,44 +88,6 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.caseList}
                     </Link>
-                    {/* <ul role="menu" className=" dropdown-menu">
-                      <li className="nav-item">
-                        <NavLink
-                          title="Portfolio 2"
-                          className="nav-link"
-                          to="/Portfolio-2col"
-                        >
-                          Portfolio 2col
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          title="Portfolio 3"
-                          className="nav-link"
-                          to="/Portfolio-3col"
-                        >
-                          Portfolio 3col
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          title="Portfolio Fullwidth"
-                          className="nav-link"
-                          to="/Portfolio-fullwidth-4col"
-                        >
-                          Portfolio fullwidth
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink
-                          title="PortfolioSingle"
-                          className="nav-link"
-                          to="/PortfolioSingle"
-                        >
-                          Portfolio Single
-                        </NavLink>
-                      </li>
-                    </ul> */}
                   </li>
                   <li className="nav-item">
                     <NavLink title="Pricing" className="nav-link" to="./">
@@ -231,18 +105,6 @@ class CustomNavbar extends ApplicationComponent {
                     >
                       {navigation.aboutUs}
                     </a>
-                    {/* <ul className="dropdown-menu">
-                      <li className="nav-item">
-                        <NavLink to="/Bloglist" className="nav-link">
-                          {navigation.companyInfo}
-                        </NavLink>
-                      </li>
-                      <li className="nav-item">
-                        <NavLink to="/BlogGridPage" className="nav-link">
-                          {navigation.newAndEvent}
-                        </NavLink>
-                      </li>
-                    </ul> */}
                   </li>
                 </ul>
                 <a className={`btn_get btn_hover ${hbtnClass}`} href="#get-app">
@@ -255,6 +117,27 @@ class CustomNavbar extends ApplicationComponent {
       </Sticky>
     );
   }
+}
+
+function TabItems({ items }) {
+  return items.map((item) => (
+    <TabItem text={item.text} pageName={item.pageName} />
+  ));
+}
+
+function TabItem({ text, pageName }) {
+  return (
+    <li className="nav-item">
+      <NavLink
+        exact
+        title={text}
+        className="nav-link"
+        to={getPathByPageName(pageName)}
+      >
+        {text}
+      </NavLink>
+    </li>
+  );
 }
 
 export default CustomNavbar;

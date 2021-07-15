@@ -4,9 +4,12 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import ScrollToTopRoute from "./ScrollToTopRoute";
 
 import BitCodeWebAppState from "./appState/contextProvider";
+import { HOME, PICK_TB } from "./common/routes";
 
-const HomeHosting = React.lazy(() => import("./Pages/HomeHosting"));
+import About from "./Pages/About";
 const NotFound = React.lazy(() => import("./Pages/404"));
+
+const ROUTES = [HOME, PICK_TB];
 
 class App extends BitCodeWebAppState {
   render() {
@@ -15,11 +18,7 @@ class App extends BitCodeWebAppState {
         <this.AppStateWrapper>
           <Router>
             <Switch>
-              <ScrollToTopRoute
-                exact={true}
-                path={"/"}
-                component={HomeHosting}
-              />
+              {generateScrollToTopRoutes(ROUTES)}
               <ScrollToTopRoute component={NotFound} />
             </Switch>
           </Router>
@@ -27,6 +26,18 @@ class App extends BitCodeWebAppState {
       </Suspense>
     );
   }
+}
+
+export function generateScrollToTopRoutes(routes) {
+  return routes.map((route) => {
+    return (
+      <ScrollToTopRoute
+        exact={true}
+        component={route.component}
+        path={route.path}
+      />
+    );
+  });
 }
 
 export default App;

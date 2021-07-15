@@ -1,11 +1,14 @@
-import React, { Component } from "react";
+import React from "react";
 import Reveal from "react-reveal/Reveal";
 import { Link } from "react-router-dom";
+import ApplicationComponent from "../../common/applicationComponent";
+import { getPathByPageName } from "../../common/routes";
 import FooterData from "./FooterData";
 
-class FooterErp extends Component {
+class FooterErp extends ApplicationComponent {
   render() {
     let { fClass } = this.props;
+    const { footer } = this.label;
     return (
       <footer className={`footer_area h_footer_dark ${fClass}`}>
         <div className="container">
@@ -19,23 +22,11 @@ class FooterErp extends Component {
                       data-wow-delay="0.2s"
                     >
                       <a href="index.html" className="f-logo">
-                        {/* <img src={require("../../img/logo2.png")} alt="" /> */}
                         <h3>源代碼科技</h3>
                         <h3>Bitcode Technology</h3>
                       </a>
-                      <p>
-                        © 2021 Bitcode Technology Ltd. All rights reserved.
-                        Proudly made in Macau
-                      </p>
-                      <div className="f_social_icon">
-                        {/* {FooterData.socialIcon.map((item) => {
-                          return (
-                            <a href="/" key={item.id}>
-                              <i className={item.icon}></i>
-                            </a>
-                          );
-                        })} */}
-                      </div>
+                      <p>{footer.copyRight}</p>
+                      <div className="f_social_icon"></div>
                     </div>
                   </div>
                 </Reveal>
@@ -48,21 +39,7 @@ class FooterErp extends Component {
                     產品
                   </h3>
                   <ul className="list-unstyled f_list">
-                    <li>
-                      <Link>ERP</Link>
-                    </li>
-                    <li>
-                      <Link>SCM</Link>
-                    </li>
-                    <li>
-                      <Link>HCM</Link>
-                    </li>
-                    <li>
-                      <Link>RMMS地產業務</Link>
-                    </li>
-                    <li>
-                      <Link>澳提代收 | PickTB.com</Link>
-                    </li>
+                    {generateItems(footer.product.products)}
                   </ul>
                 </div>
               </div>
@@ -81,55 +58,19 @@ class FooterErp extends Component {
                 </div>
               </div>
             </Reveal>
-
-            {/* {FooterData.AboutWidget.map((widget) => {
-              return (
-                <Reveal effect="fadeInLeft" duration={500} key={widget.id}>
-                  <div className="col-lg-3 col-sm-6">
-                    <div className="f_widget dark_widget about-widget pl_70">
-                      <h3 className="f-title f_500 t_color f_size_18 mb_40">
-                        {widget.title}
-                      </h3>
-                      <ul className="list-unstyled f_list">
-                        {widget.menuItems.map((item) => {
-                          return (
-                            <li key={item.id}>
-                              <Link to="/">{item.text}</Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })}
-            {FooterData.termsCondition.map((widget) => {
-              return (
-                <Reveal effect="fadeInLeft" duration={500} key={widget.id}>
-                  <div className="col-lg-2 col-sm-6">
-                    <div className="f_widget dark_widget about-widget">
-                      <h3 className="f-title f_500 t_color f_size_18 mb_40">
-                        {widget.title}
-                      </h3>
-                      <ul className="list-unstyled f_list">
-                        {widget.menuItems.map((item) => {
-                          return (
-                            <li key={item.id}>
-                              <Link to="/">{item.text}</Link>
-                            </li>
-                          );
-                        })}
-                      </ul>
-                    </div>
-                  </div>
-                </Reveal>
-              );
-            })} */}
           </div>
         </div>
       </footer>
     );
   }
 }
+
+function generateItems(items) {
+  return items.map((item) => (
+    <li>
+      <Link to={getPathByPageName(item.pageName)}>{item.text}</Link>
+    </li>
+  ));
+}
+
 export default FooterErp;
