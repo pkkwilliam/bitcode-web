@@ -4,12 +4,12 @@ import { BrowserRouter as Router, Switch } from "react-router-dom";
 import ScrollToTopRoute from "./ScrollToTopRoute";
 
 import BitCodeWebAppState from "./appState/contextProvider";
-import { HOME, PICK_TB } from "./common/routes";
+import { HOME, CAREER, PHOENIX, PICK_TB } from "./common/routes";
 
 import About from "./Pages/About";
 const NotFound = React.lazy(() => import("./Pages/404"));
 
-const ROUTES = [HOME, PICK_TB];
+const ROUTES = [HOME, CAREER, PHOENIX, PICK_TB];
 
 class App extends BitCodeWebAppState {
   render() {

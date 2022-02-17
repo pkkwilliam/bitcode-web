@@ -7,9 +7,10 @@
       "products": [
         { "text": "ERP", "pageName": "/" },
         { "text": "SCM", "pageName": "/" },
+        { "text": "Hive", "pageName": "/" },
         { "text": "澳提 | PickTB", "pageName": "PICK_TB" },
-        { "text": "Project Phoenix", "pageName": "/" },
-        { "text": "RMMS地產業務", "pageName": "/" }
+        { "text": "摸魚 | Project Phoenix", "pageName": "/" },
+        { "text": "RMMS地產業務管理", "pageName": "/" }
       ]
     }
   },
@@ -50,6 +51,10 @@
       "title": "功能特色"
     }
   },
+  "phoenixPage": {
+    "description": "閒置換物平台，倡導綠色環保",
+    "title": "摸魚 | Project Phoenix"
+  },
   "pickTBPage": {
     "description": "多功能淘寶代收平台",
     "title": "澳提 | PickTB"
@@ -64,7 +69,10 @@
     "newAndEvent": "最新消息",
     "product": {
       "title": "產品",
-      "products": [{ "text": "澳提 | PickTB", "pageName": "PICK_TB" }]
+      "products": [
+        { "text": "澳提 | PickTB", "pageName": "PICK_TB" },
+        { "text": "摸魚 | Project Phoenix", "pageName": "PHOENIX" }
+      ]
     },
     "service": "服務",
     "solution": "解决方案",

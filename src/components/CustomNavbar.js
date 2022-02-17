@@ -2,7 +2,7 @@ import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import Sticky from "react-stickynode";
 import ApplicationComponent from "../common/applicationComponent";
-import { getPathByPageName, PICK_TB } from "../common/routes";
+import { getPathByPageName } from "../common/routes";
 
 class CustomNavbar extends ApplicationComponent {
   render() {
@@ -90,7 +90,7 @@ class CustomNavbar extends ApplicationComponent {
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <NavLink title="Pricing" className="nav-link" to="./">
+                    <NavLink title="Pricing" className="nav-link" to="/career">
                       {navigation.careers}
                     </NavLink>
                   </li>
