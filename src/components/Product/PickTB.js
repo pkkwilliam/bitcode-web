@@ -13,7 +13,7 @@ const ServiceDetails = () => {
               </div>
               <div className="info_item">
                 <h6>平台:</h6>
-                <p>iOS, Android, PC, Mac</p>
+                <p>iOS, Android, 微信小程序, PC, Mac</p>
               </div>
               {/* <div className="info_item">
                 <h6>Live Time:</h6>

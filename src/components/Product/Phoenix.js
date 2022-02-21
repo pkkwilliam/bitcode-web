@@ -1,5 +1,32 @@
 import React from "react";
 
+const AppIcon = () => {
+  const appIcons = [
+    {
+      href: "https://apps.apple.com/us/app/%E6%91%B8%E9%AD%9A/id1609338112",
+      imageSrc:
+        "https://github.com/pkkwilliam/github.io-contents/raw/master/oscm/assert/install_app/install_from_apk.png",
+      type: "ANDROID",
+    },
+    {
+      href: "https://apps.apple.com/us/app/%E6%91%B8%E9%AD%9A/id1609338112",
+      imageSrc:
+        "https://github.com/pkkwilliam/github.io-contents/raw/master/oscm/assert/install_app/apple_store.png",
+      type: "IOS",
+    },
+  ];
+  return appIcons.map((appIcon) => (
+    <a href={appIcon.href}>
+      <img
+        alt={appIcon.name}
+        className="medium-margin-bottom-spacer medium-margin-right-spacer "
+        src={appIcon.imageSrc}
+        style={styles.appIcon}
+      />
+    </a>
+  ));
+};
+
 const ServiceDetails = () => {
   return (
     <section className="service_details_area sec_pad">
@@ -13,7 +40,8 @@ const ServiceDetails = () => {
               </div>
               <div className="info_item">
                 <h6>平台:</h6>
-                <p>iOS, Android</p>
+                <p>Android, iOS</p>
+                <AppIcon />
               </div>
               {/* <div className="info_item">
                 <h6>Live Time:</h6>
@@ -56,4 +84,15 @@ const ServiceDetails = () => {
     </section>
   );
 };
+
+const styles = {
+  appIcon: {
+    width: 150,
+    marginRight: 10,
+  },
+  appIconContainer: {
+    marginBotttom: 10,
+  },
+};
+
 export default ServiceDetails;
