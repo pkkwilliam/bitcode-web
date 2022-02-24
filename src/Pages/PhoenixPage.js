@@ -12,14 +12,13 @@ class PickTBPage extends ApplicationComponent {
       <div className="body_wrapper">
         <CustomNavbar
           slogo="sticky_logo"
+          showLogo={true}
           mClass="menu_four"
           nClass="w_menu ml-auto mr-auto"
         />
         <Breadcrumb
-          breadcrumbClass="breadcrumb_area"
-          imgName="breadcrumb/banner_bg.png"
-          Ptitle={phoenixPage.title}
-          Pdescription={phoenixPage.description}
+          breadcrumbClass="breadcrumb_area_three"
+          imgName="phoenix/header.png"
         />
         <Phoenix />
         <FooterTwo />

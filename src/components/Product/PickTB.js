@@ -8,8 +8,20 @@ const ServiceDetails = () => {
           <div className="col-lg-5 pr_70">
             <div className="job_info">
               <div className="info_head">
-                <i className="ti-receipt"></i>
-                <h6 className="f_p f_600 f_size_18 t_color3">產品特色</h6>
+                <div className="row">
+                  <i className="ti-package"></i>
+                  <div style={{ marginLeft: 12 }}>
+                    <h6 className="f_p f_600 f_size_18 t_color3">產品名字</h6>
+                    <p>澳提 | PickTB</p>
+                  </div>
+                </div>
+                <div className="row">
+                  <i className="ti-receipt"></i>
+                  <div style={{ marginLeft: 12 }}>
+                    <h6 className="f_p f_600 f_size_18 t_color3">產品特色</h6>
+                    <p>為香港及澳門商戶輕鬆增加收入渠道</p>
+                  </div>
+                </div>
               </div>
               <div className="info_item">
                 <h6>平台:</h6>

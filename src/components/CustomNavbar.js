@@ -8,17 +8,27 @@ class CustomNavbar extends ApplicationComponent {
   render() {
     const { navigation } = this.label;
     const { product } = navigation;
-    var { mClass, nClass, cClass, slogo, hbtnClass } = this.props;
+    var {
+      mClass,
+      nClass,
+      cClass,
+      showLogo = true,
+      logoText = "Bitcode",
+      slogo,
+      hbtnClass,
+    } = this.props;
     return (
       <Sticky top={0} innerZ={9999} activeClass="navbar_fixed">
         <header className="header_area">
           <nav className={`navbar navbar-expand-lg menu_one ${mClass}`}>
             <div className={`container ${cClass}`}>
-              <Link className={`navbar-brand ${slogo}`} to="/">
-                {/* <img src={require("../img/logo2.png")} alt="" /> */}
-                {/* <img src={require("../img/logo.png")} alt="logo" /> */}
-                <h3>Bitcode</h3>
-              </Link>
+              {showLogo ? (
+                <Link className={`navbar-brand ${slogo}`} to="/">
+                  {/* <img src={require("../img/logo2.png")} alt="" /> */}
+                  {/* <img src={require("../img/logo.png")} alt="logo" /> */}
+                  <h3>{logoText}</h3>
+                </Link>
+              ) : null}
               <button
                 className="navbar-toggler collapsed"
                 type="button"
