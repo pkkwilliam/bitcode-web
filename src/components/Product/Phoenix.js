@@ -4,14 +4,12 @@ const AppIcon = () => {
   const appIcons = [
     {
       href: "https://apps.apple.com/us/app/%E6%91%B8%E9%AD%9A/id1609338112",
-      imageSrc:
-        "https://github.com/pkkwilliam/github.io-contents/raw/master/oscm/assert/install_app/install_from_apk.png",
+      imageSrc: "/app-icon/google-play.png",
       type: "ANDROID",
     },
     {
       href: "https://apps.apple.com/us/app/%E6%91%B8%E9%AD%9A/id1609338112",
-      imageSrc:
-        "https://github.com/pkkwilliam/github.io-contents/raw/master/oscm/assert/install_app/apple_store.png",
+      imageSrc: "/app-icon/app-store.png",
       type: "IOS",
     },
   ];
@@ -20,7 +18,7 @@ const AppIcon = () => {
       <img
         alt={appIcon.name}
         className="medium-margin-bottom-spacer medium-margin-right-spacer "
-        src={appIcon.imageSrc}
+        src={require("../../img" + appIcon.imageSrc)}
         style={styles.appIcon}
       />
     </a>
