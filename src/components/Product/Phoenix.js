@@ -65,7 +65,7 @@ const ServiceDetails = () => {
             <div className="details_content">
               <div className="sec_title">
                 <p className="f_400 f_size_15">
-                  摸魚是澳門源代碼科技公司旗下APP，閒置換物，買賣交易，來摸魚摸些好物！
+                  摸魚閒置換物，買賣交易，來摸魚摸些好物！
                 </p>
                 <p className="f_400 f_size_15">
                   【以物換物】澳門唯一一個支持以物換物的閒置交易平台，僅需30秒即可發布物品，可選擇多個自己發布的物品與他人進行換物。
