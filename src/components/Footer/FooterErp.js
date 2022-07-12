@@ -26,6 +26,13 @@ class FooterErp extends ApplicationComponent {
                         <h3>Bitcode Technology</h3>
                       </a>
                       <p>{footer.copyRight}</p>
+                      <a
+                        href="https://beian.miit.gov.cn/"
+                        style={{ color: "#7b7b93" }}
+                        target="_blank"
+                      >
+                        {footer.chinaIcp}
+                      </a>
                       <div className="f_social_icon"></div>
                     </div>
                   </div>
