@@ -1,0 +1,16 @@
+name: Bitcode Web Production Deployment
+run-name: ${{ github.actor }} trigger by ${{github.event_name}}
+on: [workflow_dispatch]
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: "Build and Test Code"
+    strategy:
+      matrix:
+        node: ["12.x", "14.x"]
+    steps:
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "12.x"
+      - run: npm install
