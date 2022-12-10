@@ -20,7 +20,7 @@ jobs:
   move-build-folder:
     name: "Move Build to Tencent temp folder"
     runs-on: ubuntu-latest
-    needs: build
+    needs: build-application
     steps:
       - name: "move build to Tencent temp"
         uses: appleboy/scp-action@master
