@@ -1,4 +1,4 @@
-name: Bitcode Web Production Deployment
+name: Deploy Prod Tencent bitcode-lab.com
 run-name: ${{ github.actor }} trigger by ${{github.event_name}}
 on: [workflow_dispatch]
 jobs:
@@ -7,12 +7,27 @@ jobs:
     name: "Build and Test Code"
     strategy:
       matrix:
-        node: ["12.x", "14.x"]
+        node: ["12.x"]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
           node-version: "12.x"
-      - run: yarn install
-      - run: yarn build
+      - run: npm install
+      - run: npm run build
+
+  deploy-build:
+    name: "deploy build to Tenecet"
+    runs-on: ubuntu-latest
+    steps:
+      - name: executing remote ssh commands using password
+        uses: appleboy/ssh-action@v0.1.6
+        with:
+          host: bitcode-lab.com
+          username: ubuntu
+          key: ${{ secrets.TENCENT_CLOUD_SECRET }}
+          port: 22
+          script: |
+            whoami
+            ls -al
