@@ -1,6 +1,7 @@
+# Need to manual remove all contents in /var/www/html
 name: Deploy Prod Tencent bitcode-lab.com
 run-name: ${{ github.actor }} trigger by ${{github.event_name}}
-on: [push, workflow_dispatch]
+on: [workflow_dispatch]
 jobs:
   build-deploy-application:
     runs-on: ubuntu-latest
@@ -34,4 +35,4 @@ jobs:
           key: ${{ secrets.TENCENT_CLOUD_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            mv ~/temp/home/* /var/www/html
+            mv ~/temp/home/build/* /var/www/html
