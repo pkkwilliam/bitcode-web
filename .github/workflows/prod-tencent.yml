@@ -5,21 +5,22 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     name: "Build and Test Code"
-    strategy:
-      matrix:
-        node: ["12.x"]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: "12.x"
+          node-version: "14.x"
       - run: npm install
-      - run: npm run build
+      - name: build
+        run: npm run build
+        env:
+          CI: false
 
   deploy-build:
     name: "deploy build to Tenecet"
     runs-on: ubuntu-latest
+    needs: build-and-test
     steps:
       - name: executing remote ssh commands using password
         uses: appleboy/ssh-action@v0.1.6
@@ -31,3 +32,5 @@ jobs:
           script: |
             whoami
             ls -al
+            cd /var/www/html
+            ls
