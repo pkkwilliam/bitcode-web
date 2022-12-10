@@ -1,0 +1,41 @@
+pipeline {
+    agent any
+    environment {
+        SERVER_IP="bitcode-lab.com"
+        TARGET_FOLDER='/var/www/html'
+        TEMP_FOLDER='~/temp/home'
+    }
+    stages {
+        stage('Echo Environment Variable') {
+            steps {
+                echo "Build Page"
+                echo "Target Folder: ${TARGET_FOLDER}"
+            }     
+        }
+        stage('SCM Checkout') {
+            steps {
+                git credentialsId: 'a1a383e6-f409-439c-ab9f-fab132e4479f', url: 'git@github.com:pkkwilliam/bitcode-web.git'
+            }
+        }
+        stage('Build') {
+            steps {
+                sh '''yarn install
+                yarn build'''
+            }
+        }
+        stage('Move Build to Tencent temp folder') {
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'tencent-cdb-p6astzgu', keyFileVariable: 'private_key_file', passphraseVariable: 'none', usernameVariable: 'ubuntu')]) {
+                    sh 'scp -i ${private_key_file} -r build/* ${ubuntu}@${SERVER_IP}:${TEMP_FOLDER}'
+                }
+            }
+        }
+        stage('Move Files From Temp Folder To Production Folder') {
+            steps {
+                withCredentials([sshUserPrivateKey(credentialsId: 'tencent-cdb-p6astzgu', keyFileVariable: 'private_key_file', passphraseVariable: 'none', usernameVariable: 'ubuntu')]) {
+                    sh 'ssh -i ${private_key_file} ${ubuntu}@${SERVER_IP} "mv ${TEMP_FOLDER}/* ${TARGET_FOLDER}"'
+                }
+            }
+        }
+    }
+}
