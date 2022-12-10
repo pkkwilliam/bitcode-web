@@ -11,6 +11,7 @@ jobs:
   create-mock:
     runs-on: ubuntu-latest
     name: "prepare mock files"
+    needs: [prepare]
     steps:
       - run: cd ../temp_build
       - run: touch hello1.txt
@@ -18,10 +19,18 @@ jobs:
       - run: mkdir sub
       - run: touch sub_hello.txt
 
+  post-build:
+    runs-on: ubuntu-latest
+    name: "actions after build"
+    needs: [create-mock]
+    steps:
+      - run: cd ../temp_build
+      - run: tar -cvf deploy.tar ../temp_build/
+
   mock-move-build-folder:
     name: "Move Build to Tencent temp folder"
     runs-on: ubuntu-latest
-    needs: [prepare]
+    needs: [post-build]
     steps:
       - name: "move build to Tencent temp"
         uses: appleboy/scp-action@master
@@ -30,7 +39,7 @@ jobs:
           username: ${{ secrets.TENCENT_CLOUD_SSH_USERNAME }}
           key: ${{ secrets.TENCENT_CLOUD_KEY }}
           port: ${{ secrets.PORT }}
-          source: "../temp_build/*"
+          source: "deploy.tar"
           target: "~/temp/home"
 
   # build-application:
