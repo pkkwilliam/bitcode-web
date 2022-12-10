@@ -34,4 +34,4 @@ jobs:
           key: ${{ secrets.TENCENT_CLOUD_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            mv ~/temp/home* /var/www/html
+            mv ~/temp/home/* /var/www/html
