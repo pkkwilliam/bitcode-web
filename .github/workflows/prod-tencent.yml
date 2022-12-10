@@ -2,7 +2,7 @@ name: Deploy Prod Tencent bitcode-lab.com
 run-name: ${{ github.actor }} trigger by ${{github.event_name}}
 on: [workflow_dispatch]
 jobs:
-  build-and-test:
+  build-application:
     runs-on: ubuntu-latest
     name: "Build and Test Code"
     steps:
@@ -17,20 +17,17 @@ jobs:
         env:
           CI: false
 
-  deploy-build:
-    name: "deploy build to Tenecet"
+  move-build-folder:
+    name: "Move Build to Tencent temp folder"
     runs-on: ubuntu-latest
-    needs: build-and-test
+    needs: build
     steps:
-      - name: executing remote ssh commands using password
-        uses: appleboy/ssh-action@v0.1.6
+      - name: "move build to Tencent temp"
+        uses: appleboy/scp-action@master
         with:
           host: bitcode-lab.com
           username: ubuntu
           key: ${{ secrets.TENCENT_CLOUD_SECRET }}
           port: 22
-          script: |
-            whoami
-            ls -al
-            cd /var/www/html
-            ls
+          source: "build/*"
+          target: "~/temp/home"
