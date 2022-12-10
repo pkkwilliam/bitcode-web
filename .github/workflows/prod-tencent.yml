@@ -4,8 +4,7 @@ on: [push, workflow_dispatch]
 jobs:
   build-deploy-application:
     runs-on: ubuntu-latest
-    name: "Build and Test Code"
-    needs: prepare
+    name: "Build and Deploy Application"
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js
