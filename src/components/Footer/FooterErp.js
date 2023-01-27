@@ -39,7 +39,7 @@ class FooterErp extends ApplicationComponent {
                 </Reveal>
               );
             })}
-            <Reveal effect="fadeInLeft" duration={500}>
+            {/* <Reveal effect="fadeInLeft" duration={500}>
               <div className="col-lg-3 col-sm-6">
                 <div className="f_widget dark_widget about-widget pl_70">
                   <h3 className="f-title f_500 t_color f_size_18 mb_40">
@@ -50,7 +50,7 @@ class FooterErp extends ApplicationComponent {
                   </ul>
                 </div>
               </div>
-            </Reveal>
+            </Reveal> */}
             <Reveal effect="fadeInLeft" duration={500}>
               <div className="col-lg-5 col-sm-6">
                 <div className="f_widget dark_widget about-widget pl_70">
